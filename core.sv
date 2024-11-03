@@ -19,28 +19,7 @@ fetch fetch_inst(
 );
 
 logic stall_off_decode;
-/*
-reg stall_counter; // 1-bit counter for 1 clock cycle
 
-always @(posedge clk or negedge rst) begin
-    if (!rst) begin
-        stall_off_decode <= 1'b0;
-        stall_counter <= 1'b0; // Reset counter
-    end else begin
-        if (stall_decode) begin
-            stall_counter <= 1'b1; // Set counter when stall_decode is true
-        end else begin
-            stall_counter <= 1'b0; // Reset counter if not stalling
-            stall_off_decode <= 1'b0; // Reset stall_off_decode if no stall
-        end
-
-        // Set stall_off_decode to 1'b1 when the counter is set
-        if (stall_counter) begin
-            stall_off_decode <= 1'b1; // Set after 1 clock cycle
-        end
-    end
-end
-*/
 always@(posedge clk or negedge rst)
 begin 
     if(!rst)
